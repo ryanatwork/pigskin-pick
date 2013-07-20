@@ -50,5 +50,6 @@ Season.create(:name => "2013 - 2014 Season", :start_date => Date.parse("2013-09-
 
 Week.create(:season_id => 1,:nfl_week => 1, :start_date => Date.parse("2013-09-05"), :end_date => Date.parse("2013-09-9"))
 
+Game.create(week_id: 1, game_day: Date.parse("2013-09-05"),  home_team_id: 1, away_team_id: 2)
 
 User.create(:email => "admin@example.com", :password => "password")

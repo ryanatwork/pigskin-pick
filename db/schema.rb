@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130720210146) do
+ActiveRecord::Schema.define(version: 20130720211136) do
+
+  create_table "games", force: true do |t|
+    t.integer  "week_id"
+    t.datetime "game_day"
+    t.integer  "away_team_id"
+    t.integer  "home_team_id"
+    t.integer  "away_team_score"
+    t.integer  "home_team_score"
+    t.integer  "winner_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "games", ["away_team_id"], name: "index_games_on_away_team_id", unique: true
+  add_index "games", ["home_team_id"], name: "index_games_on_home_team_id", unique: true
+  add_index "games", ["week_id"], name: "index_games_on_week_id", unique: true
+  add_index "games", ["winner_id"], name: "index_games_on_winner_id", unique: true
 
   create_table "seasons", force: true do |t|
     t.string   "name"
