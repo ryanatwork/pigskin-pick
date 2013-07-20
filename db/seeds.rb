@@ -48,5 +48,7 @@ puts "Teams created #{Team.count}"
 
 Season.create(:name => "2013 - 2014 Season", :start_date => Date.parse("2013-09-05"), :end_date => Date.parse("2014-02-28"))
 
+Week.create(:season_id => 1,:nfl_week => 1, :start_date => Date.parse("2013-09-05"), :end_date => Date.parse("2013-09-9"))
+
 
 User.create(:email => "admin@example.com", :password => "password")
